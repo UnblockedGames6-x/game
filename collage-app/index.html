@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collage Maker</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-2xl font-bold mb-4 text-center">Collage Maker</h1>
+    <div class="flex flex-col md:flex-row md:space-x-4 mb-4">
+      <div class="flex-1 space-y-2">
+        <input type="file" id="imageLoader" multiple accept="image/*" class="w-full" />
+        <select id="templateSelect" class="w-full border p-2">
+          <option value="two">Two Blocks</option>
+          <option value="four">Four Blocks</option>
+          <option value="three">Three Blocks</option>
+        </select>
+        <div class="flex space-x-2">
+          <label class="flex items-center space-x-1">
+            <span>Background</span>
+            <input type="color" id="bgColor" value="#ffffff" />
+          </label>
+          <label class="flex items-center space-x-1">
+            <span>Border</span>
+            <input type="color" id="borderColor" value="#000000" />
+          </label>
+          <label class="flex items-center space-x-1">
+            <span>Width</span>
+            <input type="number" id="borderWidth" value="2" min="0" class="w-16" />
+          </label>
+        </div>
+        <div class="space-x-2">
+          <button id="exportPng" class="bg-blue-500 text-white px-3 py-1 rounded">Export PNG</button>
+          <button id="exportJpg" class="bg-green-500 text-white px-3 py-1 rounded">Export JPG</button>
+        </div>
+      </div>
+      <canvas id="c" width="800" height="600" class="border"></canvas>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/fabric@4.6.0/dist/fabric.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
